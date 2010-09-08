@@ -1,7 +1,7 @@
 Summary:	eCAP - the code in the middle
 Name:		libecap
 Version:	0.0.2
-Release:	0.1
+Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://www.measurement-factory.com/tmp/ecap/%{name}-%{version}.tar.gz
@@ -77,7 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %{_libdir}/libecap.so
-%{_includedir}/libaecap
+%{_includedir}/libecap
 
 %files static
 %defattr(644,root,root,755)
