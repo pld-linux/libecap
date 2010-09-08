@@ -1,0 +1,9 @@
+--- libecap-0.0.2/src/libecap/common/name.cc~	2008-05-14 00:18:00.000000000 +0200
++++ libecap-0.0.2/src/libecap/common/name.cc	2010-09-08 19:59:23.742327925 +0200
+@@ -1,5 +1,6 @@
+ #include <libecap/common/name.h>
+ #include <libecap/common/errors.h>
++#include <climits>
+ #include <limits>
+ 
+ libecap::Name::Id libecap::Name::TheLastId = libecap::Name::nameUnidentified;
