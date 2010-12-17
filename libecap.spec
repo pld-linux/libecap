@@ -1,12 +1,11 @@
 Summary:	eCAP - the code in the middle
 Name:		libecap
-Version:	0.0.2
+Version:	0.0.3
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://www.measurement-factory.com/tmp/ecap/%{name}-%{version}.tar.gz
-# Source0-md5:	9bd302fef03eba1e6627a4ad2942aa41
-Patch0:		%{name}-gcc.patch
+# Source0-md5:	62fbac7b84fd50978e6df1c3439ef878
 URL:		http://www.e-cap.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -50,7 +49,6 @@ Statyczna biblioteka eCAP.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %configure
