@@ -7,6 +7,7 @@ Group:		Libraries
 Source0:	http://www.measurement-factory.com/tmp/ecap/%{name}-%{version}.tar.gz
 # Source0-md5:	62fbac7b84fd50978e6df1c3439ef878
 URL:		http://www.e-cap.org/
+BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
