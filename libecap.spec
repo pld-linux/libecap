@@ -1,13 +1,14 @@
 Summary:	eCAP - the code in the middle
 Name:		libecap
 Version:	0.2.0
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries
 Source0:	http://www.measurement-factory.com/tmp/ecap/%{name}-%{version}.tar.gz
 # Source0-md5:	e65a855f4fbb0f3136af7fe28249e883
 URL:		http://www.e-cap.org/
 BuildRequires:	libstdc++-devel
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -61,6 +62,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libecap.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -77,8 +80,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_libdir}/libecap.so
 %{_includedir}/libecap
+%{_pkgconfigdir}/libecap.pc
 
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libecap.a
-%{_libdir}/libecap.la
