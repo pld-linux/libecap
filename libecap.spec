@@ -1,12 +1,12 @@
 Summary:	eCAP - the code in the middle
 Summary(pl.UTF-8):	eCAP - kod pośredniczący
 Name:		libecap
-Version:	1.0.0
-Release:	2
+Version:	1.0.1
+Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://www.measurement-factory.com/tmp/ecap/%{name}-%{version}.tar.gz
-# Source0-md5:	68cbd5b8e505e3fa7da520c3b0fe5a3c
+# Source0-md5:	ba3b9025264e6c23e6413666fff9fdab
 URL:		http://www.e-cap.org/
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
