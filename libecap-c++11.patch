@@ -1,0 +1,41 @@
+diff -ur libecap-1.0.1.orig/src/libecap/common/area.cc libecap-1.0.1/src/libecap/common/area.cc
+--- libecap-1.0.1.orig/src/libecap/common/area.cc	2015-05-13 16:00:35.000000000 +0000
++++ libecap-1.0.1/src/libecap/common/area.cc	2018-03-12 10:20:54.916970413 +0000
+@@ -14,8 +14,8 @@
+ 
+ 
+ libecap::Area libecap::Area::FromTempString(const std::string &tmp) {
+-	shared_ptr<StdStringAreaDetails> details(new StdStringAreaDetails(tmp));
+-	return Area(details->owner_.data(), details->owner_.size(), details);
++	shared_ptr<StdStringAreaDetails> detls(new StdStringAreaDetails(tmp));
++	return Area(detls->owner_.data(), detls->owner_.size(), detls);
+ }
+ 
+ libecap::Area libecap::Area::FromTempBuffer(const char *start, libecap::size_type size) {
+diff -ur libecap-1.0.1.orig/src/libecap/common/memory.h libecap-1.0.1/src/libecap/common/memory.h
+--- libecap-1.0.1.orig/src/libecap/common/memory.h	2014-10-02 04:05:24.000000000 +0000
++++ libecap-1.0.1/src/libecap/common/memory.h	2018-03-12 10:20:58.251970376 +0000
+@@ -4,14 +4,23 @@
+ #define LIBECAP__COMMON_MEMORY_H
+ 
+ #include <libecap/common/libecap.h>
++#if defined(_LIBCPP_VERSION)
++#include <memory>
++#else
+ #include <tr1/memory>
++#endif
+ 
+ // TODO: add support for boost pointers if std::tr1 is not available
+ 
+ namespace libecap {
+ 
++#if defined(_LIBCPP_VERSION)
++using std::weak_ptr;
++using std::shared_ptr;
++#else
+ using std::tr1::weak_ptr;
+ using std::tr1::shared_ptr;
++#endif
+ 
+ } // namespace libecap
+ 
